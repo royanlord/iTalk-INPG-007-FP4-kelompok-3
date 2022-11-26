@@ -11,38 +11,159 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <body class="body" style="padding: 200px;">
-
-        <div class="container-fluid" style="background-color: black; margin-right: 100px;">
-            <div class="row">
-                <div class="col-4 col-lg-4 text-center" style="background: url('img/card.jpg'); background-size: cover; background-repeat: no-repeat;">
-                    <h1 class="p-4"> Ramalan Cuaca</h1>
-                </div>
-                <div class="col-8 col-lg-8 p-5 text-success">
-                    <div class="container mb-5">
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <input type="text" class="inp">	
+    <div class="container text-white mt-4 mb-5">
+        <div class="row">
+            <div class="left col-lg-5 bg-secondary d-flex align-items-center justify-content-center" style="height: 47.rem;">
+                <h2 class="text-center text-wrap">Ramalan Cuaca</h2>
+            </div>
+            <div class="right col-lg-7" style="background-color: #f1f0f0; height: 47.rem;">
+                <!-- input field and button -->
+                <form class="pt-5 mt-3">
+                    <div class="row g-2">
+                        <div class="col-lg-7 offset-lg-1">
+                            <div class="input-group">
+                                <input type="text" id="inputCity" class="form-control form-control-lg field-box" placeholder="Show me the weather in.." required>
                             </div>
-                            <div class="col-lg-3">
-                                <button type="submit" class="btn btn-success p-3 fs-5">Submit</button>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group">
+                                <input type="text" placeholder="yyyy-mm-dd" class="form-control form-control-lg date-box" id="date">
                             </div>
                         </div>
                     </div>
-    
-                    <div class="text-center">
-                        <h2>City : Bali</h2>
-                        <h3>Condition : few coulds</h3>
-                        <h3>Temperature : 27.69 C</h3>
-                        <h3>Wind Speed : 4.18 km/h</h3>
+                    <div class="row justify-content-center d-flex pb-4 pt-3">
+                        <div class="col-lg-3 col-md-4 col-sm-12 btn-sec">
+                            <div class="input-group justify-content-center d-flex">
+                                <button type="submit" id="btnSubmit" class="btn  rounded-4">Search</button>
+                            </div>
+                        </div>
                     </div>
-    
+                </form>
+
+                <hr>
+
+                <!-- result -->
+                <div class="result container-fluid pb-1 pt-1">
+                    <div class="row text-center text-dark">
+                        <span id="city">-</span>
+                        <span id="dates">-</span>
+                    </div>
                 </div>
-            </div>	
+                <ul class="nav nav-tabs pt-3" id="myTab" role="tablist" style="margin-left: -12px; margin-right: -12px;">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="day-tab" data-bs-toggle="tab" data-bs-target="#day-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Today</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="hours-tab" data-bs-toggle="tab" data-bs-target="#hours-tab-pane" type="button" role="tab" aria-controls="hours-tab-pane" aria-selected="false">Hourly</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#graph-tab-pane" type="button" role="tab" aria-controls="graph-tab-pane" aria-selected="false">Graph</button>
+                    </li>
+                </ul>
+                
+                <!-- day result -->
+                <div class="tab-content bg-white text-dark pb-4" id="myTabContent" style="margin-left: -12px; margin-right: -12px;">
+                    <div class="tab-pane fade show active" id="day-tab-pane" role="tabpanel" aria-labelledby="day-tab" tabindex="0">
+                        <div class="row pt-4 pb-1">
+                            <h5 class="text-center">Today's weather in <span id="detailCity">-</span></h5>
+                        </div>
+                        <div class="day-temp-con row justify-content-center d-flex pb-2">
+                            <div class="col-lg-5 text-center pt-1 ps-5">
+                                <span id="temp-day">0&#8451;</span>
+                            </div>
+                            <div class="condition col-lg-4 text-center pt-3 pe-5">
+                                <img src="style/images/disconnected.png" id="imgCondition-day" alt="icon-condition">
+                                <p id="conditions-day" class="text-wrap">Conditions</p>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-2">
+                                <img src="style/images/sunrise.png" class="d-block mx-auto" alt="sunrise" style="width: 80px; height: 80px">
+                                <h5  class="text-center">Sunrise</h5>
+                                <h6 class="text-center" id="sunrise">--:--</h6>
+                            </div>
+                            <div class="col-lg-3 col-md-2">
+                                <img src="style/images/sunset.png" class="d-block mx-auto" alt="sunset" style="width: 80px; height: 80px">
+                                <h5 class="text-center">Sunset</h5>
+                                <h6 class="text-center" id="sunset">--:--</h6>
+                            </div>
+                        </div>
+                        <!-- <div class="row mx-5 gy-1 fs-5 text-center pt-4">
+                            <div class="col-lg-3 col-md-3 col-sm-6 pb-2">
+                                <h5>Wind</h5>
+                                <span id="windSpeed">wind</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 pb-2">
+                                <h5>Humidity</h5>
+                                <span id="windSpeed">Humidity</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h5>Pressure</h5>
+                                <span id="windSpeed">Pressure</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h5>Wind</h5>
+                                <span id="windSpeed">wind</span>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- hours result -->
+                    <div class="tab-pane fade" id="hours-tab-pane" role="tabpanel" aria-labelledby="hours-tab" tabindex="0">
+                        <!-- <div class="row">
+                            <div class="col-lg-5 ms-3">
+                                <h3 id="time">--:--</h3>
+                            </div>
+                        </div> -->
+                        <div class="hours-temp-con row gx-1 pt-3 justify-content-center d-flex">
+                            <div class="col-lg-5 text-center ps-5">
+                                <span id="time">--:--</span><br>
+                                <span id="temp-hours">0 &#8451;</span>
+                            </div>
+                            <div class="condition col-lg-4 text-center pt-4 pe-5">
+                                <img src="style/images/disconnected.png" id="imgCondition-hours" alt="icon-condition">
+                                <p id="conditions-hours" class="text-wrap">Conditions</p>
+                            </div>
+                        </div>
+                        <div class="hours-data row mx-5 gy-1 fs-5 text-center pt-4">
+                            <div class="col-lg-3 col-md-3 col-sm-6 pb-2  border-end border-2">
+                                <h5>Wind</h5>
+                                <span id="windSpeed">0 kph</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 pb-2 border-end border-2 hum-sec">
+                                <h5>Humidity</h5>
+                                <span id="humidity">0 %</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 border-end border-2">
+                                <h5>Pressure</h5>
+                                <span id="pressure">0 mb</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h5>Rain</h5>
+                                <span id="chanceRain">0 %</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- graph -->
+                    <div class="tab-pane fade" id="graph-tab-pane" role="tabpanel" aria-labelledby="graph-tab" tabindex="0">
+
+                    </div>
+                </div>
+                
+                <!-- <div class="row">
+                    <span id="temp">Temperature</span>
+                </div>
+                <div class="row">
+                    <span id="conditions">Conditions</span>
+                </div> -->
+                <!-- <div class="row">
+                    <span id="windSpeed">Wind Speed</span>
+                </div> -->
+            </div>
         </div>
+    </div>
 
-
-    
     <script
         src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
