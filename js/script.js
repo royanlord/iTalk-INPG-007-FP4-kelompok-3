@@ -23,7 +23,7 @@ btnSubmit.addEventListener('click', function(e) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'aa5108d3c0msh3265849c5b214cfp1235cajsnef515cdda079',
+            'X-RapidAPI-Key': '',
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
