@@ -324,8 +324,19 @@ btnSubmit.addEventListener('click', function(e) {
                     this.innerHTML = "Search"
                     document.body.style.cursor = "default";
                     document.getElementById('btnSubmit').disabled = false;
+
                     getCity.value = null;
                     getDate.value = null;
+
+                    // hide notfound
+                    var contentDay = document.getElementById('content-day');
+                    var contentHours = document.getElementById('content-hours');
+                    var notFoundDay = document.getElementById('not-found-day');
+                    var notFoundHours = document.getElementById('not-found-hours');
+                    notFoundDay.classList.add("d-none")
+                    notFoundHours.classList.add("d-none")
+                    contentDay.classList.remove("d-none")
+                    contentHours.classList.remove("d-none")
                 })
                 .catch(err => {
                     if (setCity.length != 0) {
@@ -338,6 +349,22 @@ btnSubmit.addEventListener('click', function(e) {
                         this.innerHTML = "Search"
                         document.body.style.cursor = "default";
                         document.getElementById('btnSubmit').disabled = false;
+
+                        getCity.value = null;
+                        getDate.value = null;
+
+                        document.getElementById('city').innerHTML = "<span id='city' class='text-muted' style='font-size: 20px'>Please input a valid location!</span>"
+                        document.getElementById('dates').innerHTML = "-"
+
+                        // show notfound
+                        var contentDay = document.getElementById('content-day');
+                        var contentHours = document.getElementById('content-hours');
+                        var notFoundDay = document.getElementById('not-found-day');
+                        var notFoundHours = document.getElementById('not-found-hours');
+                        contentDay.classList.add("d-none")
+                        contentHours.classList.add("d-none")
+                        notFoundDay.classList.remove("d-none")
+                        notFoundHours.classList.remove("d-none")
                     }
                     console.error(err)
                 });
