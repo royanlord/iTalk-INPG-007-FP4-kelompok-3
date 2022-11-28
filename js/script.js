@@ -15,6 +15,12 @@ var btnSubmit = document.getElementById('btnSubmit');
 var getCity = document.getElementById('inputCity');
 var getDate = document.getElementById('date');
 
+const dispGraph = document.getElementById('disp-graph');
+const ctx1 = document.getElementById('myChart1');
+const ctx2 = document.getElementById('myChart2');
+const ctx3 = document.getElementById('myChart3');
+const ctx4 = document.getElementById('myChart4');
+
 function formatAMPM(date) {
     date = new Date(date)
     var hours = date.getHours();
