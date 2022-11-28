@@ -345,6 +345,89 @@ btnSubmit.addEventListener('click', function(e) {
 
                     getCity.value = null;
                     getDate.value = null;
+                    
+                    const fetchedDataForGraph = response.forecast.forecastday[0].hour
+                    new Chart(ctx1, {
+                        type: 'line',
+                        data: {
+                            labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
+                            datasets: [
+                                {
+                                    label: 'Temp (C)',
+                                    data: fetchedDataForGraph.map(e => e.temp_c),
+                                    borderWidth: 1
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        }
+                    });
+                    new Chart(ctx2, {
+                        type: 'line',
+                        data: {
+                            labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
+                            datasets: [
+                                {
+                                    label: 'Humidity (%)',
+                                    data: fetchedDataForGraph.map(e => e.humidity),
+                                    borderWidth: 1
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        }
+                    });
+                    new Chart(ctx3, {
+                        type: 'line',
+                        data: {
+                            labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
+                            datasets: [
+                                {
+                                    label: 'Wind (kph)',
+                                    data: fetchedDataForGraph.map(e => e.wind_kph),
+                                    borderWidth: 1
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        }
+                    });
+                    new Chart(ctx4, {
+                        type: 'line',
+                        data: {
+                            labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
+                            datasets: [
+                                {
+                                    label: 'Pressure (mb)',
+                                    data: fetchedDataForGraph.map(e => e.pressure_mb),
+                                    borderWidth: 1
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        }
+                    });
+                    dispGraph.classList.remove('d-none');
 
                     // hide notfound
                     var contentDay = document.getElementById('content-day');
