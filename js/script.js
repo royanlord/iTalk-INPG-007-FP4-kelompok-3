@@ -345,7 +345,7 @@ btnSubmit.addEventListener('click', function(e) {
 
                     getCity.value = null;
                     getDate.value = null;
-                    
+
                     const fetchedDataForGraph = response.forecast.forecastday[0].hour
                     new Chart(ctx1, {
                         type: 'line',
@@ -438,6 +438,11 @@ btnSubmit.addEventListener('click', function(e) {
                     notFoundHours.classList.add("d-none")
                     contentDay.classList.remove("d-none")
                     contentHours.classList.remove("d-none")
+                    
+                    var contentGraph = document.getElementById('content-graph');
+                    var notFoundGraph = document.getElementById('not-found-graph');
+                    notFoundGraph.classList.add("d-none")
+                    contentGraph.classList.remove("d-none")
                 })
                 .catch(err => {
                     if (setCity.length != 0) {
@@ -466,6 +471,11 @@ btnSubmit.addEventListener('click', function(e) {
                         contentHours.classList.add("d-none")
                         notFoundDay.classList.remove("d-none")
                         notFoundHours.classList.remove("d-none")
+                        
+                        var contentGraph = document.getElementById('content-graph');
+                        var notFoundGraph = document.getElementById('not-found-graph');
+                        contentGraph.classList.add("d-none")
+                        notFoundGraph.classList.remove("d-none")
                     }
                     console.error(err)
                 });
