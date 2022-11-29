@@ -15,11 +15,72 @@ var btnSubmit = document.getElementById('btnSubmit');
 var getCity = document.getElementById('inputCity');
 var getDate = document.getElementById('date');
 
+var collapseTemp = document.querySelector('.collapse-temp');
+var collapseHum = document.querySelector('.collapse-hum');
+var collapseWind = document.querySelector('.collapse-wind');
+var collapsePress = document.querySelector('.collapse-press');
+
+var expandMoreTemp = document.getElementById('expand-more-temp')
+var expandLessTemp = document.getElementById('expand-less-temp')
+var expandMoreHum = document.getElementById('expand-more-hum')
+var expandLessHum = document.getElementById('expand-less-hum')
+var expandMoreWind = document.getElementById('expand-more-wind')
+var expandLessWind = document.getElementById('expand-less-wind')
+var expandMorePress = document.getElementById('expand-more-press')
+var expandLessPress = document.getElementById('expand-less-press')
+
 const dispGraph = document.getElementById('disp-graph');
 const ctx1 = document.getElementById('myChart1');
 const ctx2 = document.getElementById('myChart2');
 const ctx3 = document.getElementById('myChart3');
 const ctx4 = document.getElementById('myChart4');
+
+collapseTemp.addEventListener('click', function(e) {
+    e.preventDefault();
+    var attrAriaTemp = collapseTemp.getAttribute('aria-expanded');
+    if (attrAriaTemp == "true") {
+        expandMoreTemp.classList.add('d-none')
+        expandLessTemp.classList.remove('d-none')
+    } else {
+        expandMoreTemp.classList.remove('d-none')
+        expandLessTemp.classList.add('d-none')
+    }
+})
+
+collapseHum.addEventListener('click', function(e) {
+    e.preventDefault();
+    var attrAriaHum = collapseHum.getAttribute('aria-expanded');
+    if (attrAriaHum == "true") {
+        expandMoreHum.classList.add('d-none')
+        expandLessHum.classList.remove('d-none')
+    } else {
+        expandMoreHum.classList.remove('d-none')
+        expandLessHum.classList.add('d-none')
+    }
+})
+collapseWind.addEventListener('click', function(e) {
+    e.preventDefault();
+    var attrAriaWind = collapseWind.getAttribute('aria-expanded');
+    if (attrAriaWind == "true") {
+        expandMoreWind.classList.add('d-none')
+        expandLessWind.classList.remove('d-none')
+    } else {
+        expandMoreWind.classList.remove('d-none')
+        expandLessWind.classList.add('d-none')
+    }
+})
+
+collapsePress.addEventListener('click', function(e) {
+    e.preventDefault();
+    var attrAriaPress = collapsePress.getAttribute('aria-expanded');
+    if (attrAriaPress == "true") {
+        expandMorePress.classList.add('d-none')
+        expandLessPress.classList.remove('d-none')
+    } else {
+        expandMorePress.classList.remove('d-none')
+        expandLessPress.classList.add('d-none')
+    }
+})
 
 function formatAMPM(date) {
     date = new Date(date)
@@ -41,7 +102,7 @@ btnSubmit.addEventListener('click', function(e) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '',
+            'X-RapidAPI-Key': 'aa5108d3c0msh3265849c5b214cfp1235cajsnef515cdda079',
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
@@ -353,7 +414,7 @@ btnSubmit.addEventListener('click', function(e) {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
                             datasets: [
                                 {
-                                    label: 'Temp (C)',
+                                    label: 'Temp (℃)',
                                     data: fetchedDataForGraph.map(e => e.temp_c),
                                     borderWidth: 1
                                 },
