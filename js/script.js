@@ -137,19 +137,19 @@ btnSubmit.addEventListener('click', function(e) {
                     console.log(response);
                     document.getElementById('city').innerHTML = response.location.name+', '+response.location.country;
                     var dates = new Date(response.forecast.forecastday[0].date);
-                    // var tahun = dates.getFullYear()
                     var times = new Date()
                     var jam = times.getHours()
                     // var menit = times.getMinutes()
                     // var detik = times.getSeconds()
                     var hari = dates.getDay()
                     var bulan = dates.getMonth()
+                    var tahun = dates.getFullYear()
                     var tanggal = dates.getDate()
                     
                     var hariarray = new Array("Sunday,","Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday,")
                     var bulanarray = new Array("Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")
         
-                    document.getElementById('dates').innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]
+                    document.getElementById('dates').innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun
         
                     // day section
                     document.getElementById('detailCity').innerHTML = response.location.name;
@@ -159,6 +159,10 @@ btnSubmit.addEventListener('click', function(e) {
                     document.getElementById('imgCondition-day').setAttribute("src", `https://${iconCond}`)
                     document.getElementById('sunrise').innerHTML = response.forecast.forecastday[0].astro.sunrise;
                     document.getElementById('sunset').innerHTML = response.forecast.forecastday[0].astro.sunset;
+
+                    // graphs
+                    document.getElementById('graphCity').innerHTML = response.location.name+' Weather Chart';
+                    document.getElementById('graphCity').classList.remove('text-muted')
         
                     // hours section
                     if (jam >= 0 && jam < 1) {
