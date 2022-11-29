@@ -153,7 +153,7 @@ btnSubmit.addEventListener('click', function(e) {
         
                     // day section
                     document.getElementById('detailCity').innerHTML = response.location.name;
-                    document.getElementById('temp-day').innerHTML = response.forecast.forecastday[0].day.avgtemp_c + "&#8451;";
+                    document.getElementById('temp-day').innerHTML = response.forecast.forecastday[0].day.avgtemp_c + "°C";
                     document.getElementById('conditions-day').innerHTML = response.forecast.forecastday[0].day.condition.text;
                     iconCond = response.forecast.forecastday[0].day.condition.icon;
                     document.getElementById('imgCondition-day').setAttribute("src", `https://${iconCond}`)
@@ -162,7 +162,7 @@ btnSubmit.addEventListener('click', function(e) {
         
                     // hours section
                     if (jam >= 0 && jam < 1) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[0].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[0].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[0].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[0].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -171,7 +171,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[0].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[0].chance_of_rain + " %";
                     } else if (jam >= 1 && jam < 2) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[1].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[1].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[1].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[1].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -180,7 +180,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[1].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[1].chance_of_rain + " %";
                     } else if (jam >= 2 && jam < 3) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[2].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[2].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[2].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[2].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -189,7 +189,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[2].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[2].chance_of_rain + " %";
                     } else if (jam >= 3 && jam < 4) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[3].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[3].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[3].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[3].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -198,7 +198,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[3].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[3].chance_of_rain + " %";
                     } else if (jam >= 4 && jam < 5) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[4].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[4].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[4].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[4].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -207,7 +207,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[4].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[4].chance_of_rain + " %";
                     } else if (jam >= 5 && jam < 6) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[5].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[5].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[5].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[5].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -216,7 +216,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[5].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[5].chance_of_rain + " %";
                     } else if (jam >= 6 && jam < 7) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[6].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[6].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[6].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[6].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -225,7 +225,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[6].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[6].chance_of_rain + " %";
                     } else if (jam >= 7 && jam < 8) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[7].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[7].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[7].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[7].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -234,7 +234,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[7].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[7].chance_of_rain + " %";
                     } else if (jam >= 8 && jam < 9) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[8].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[8].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[8].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[8].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -243,7 +243,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[8].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[8].chance_of_rain + " %";
                     } else if (jam >= 9 && jam < 10) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[9].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[9].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[9].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[9].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -252,7 +252,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[9].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[9].chance_of_rain + " %";
                     } else if (jam >= 10 && jam < 11) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[10].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[10].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[10].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[10].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -261,7 +261,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[10].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[10].chance_of_rain + " %";
                     } else if (jam >= 11 && jam < 12) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[11].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[11].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[11].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[11].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -270,7 +270,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[11].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[11].chance_of_rain + " %";
                     } else if (jam >= 12 && jam < 13) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[12].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[12].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[12].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[12].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -279,7 +279,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[12].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[12].chance_of_rain + " %";
                     } else if (jam >= 13 && jam < 14) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[13].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[13].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[13].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[13].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -288,7 +288,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[13].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[13].chance_of_rain + " %";
                     } else if (jam >= 14 && jam < 15) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[14].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[14].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[14].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[14].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -297,7 +297,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[14].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[14].chance_of_rain + " %";
                     } else if (jam >= 15 && jam < 16) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[15].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[15].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[15].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[15].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -306,7 +306,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[15].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[15].chance_of_rain + " %";
                     } else if (jam >= 16 && jam < 17) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[16].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[16].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[16].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[16].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -315,7 +315,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[16].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[16].chance_of_rain + " %";
                     } else if (jam >= 17 && jam < 18) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[17].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[17].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[17].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[17].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -324,7 +324,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[17].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[17].chance_of_rain + " %";
                     } else if (jam >= 18 && jam < 19) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[18].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[18].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[18].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[18].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -333,7 +333,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[18].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[18].chance_of_rain + " %";
                     } else if (jam >= 19 && jam < 20) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[19].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[19].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[19].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[19].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -342,7 +342,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[19].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[19].chance_of_rain + " %";
                     } else if (jam >= 20 && jam < 21) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[20].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[20].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[20].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[20].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -351,7 +351,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[20].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[20].chance_of_rain + " %";
                     } else if (jam >= 21 && jam < 22) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[21].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[21].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[21].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[21].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -360,7 +360,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[21].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[21].chance_of_rain + " %";
                     } else if (jam >= 22 && jam < 23) {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[22].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[22].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[22].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[22].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -369,7 +369,7 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('pressure').innerHTML = response.forecast.forecastday[0].hour[22].pressure_mb + " mb";
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[22].chance_of_rain + " %";
                     } else {
-                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[23].temp_c + "&#8451;";
+                        document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[23].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[23].condition.text;
                         iconCond = response.forecast.forecastday[0].hour[23].condition.icon;
                         document.getElementById('imgCondition-hours').setAttribute("src", `https://${iconCond}`)
@@ -420,7 +420,7 @@ btnSubmit.addEventListener('click', function(e) {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
                             datasets: [
                                 {
-                                    label: 'Temp (℃)',
+                                    label: 'Temp (°C)',
                                     data: fetchedDataForGraph.map(e => e.temp_c),
                                     borderWidth: 1
                                 },

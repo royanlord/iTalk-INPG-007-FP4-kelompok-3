@@ -16,7 +16,7 @@
     <div class="container text-white mt-4 mb-5">
         <div class="row">
             <div class="left col-lg-5 bg-secondary d-flex align-items-center justify-content-center" style="height: 47.rem;">
-                <h2 class="text-center text-wrap">Ramalan Cuaca</h2>
+                <h2 class="text-center text-wrap">Weather Forecast</h2>
             </div>
             <div class="right col-lg-7" style="background-color: #f1f0f0; height: 47.rem;">
                 <!-- input field and button -->
@@ -77,14 +77,14 @@
                             </div>
                             <div class="day-temp-con row justify-content-center d-flex pb-2">
                                 <div class="col-lg-5 text-center pt-1 ps-5">
-                                    <span id="temp-day">0&#8451;</span>
+                                    <span id="temp-day">0°C</span>
                                 </div>
                                 <div class="condition col-lg-4 text-center pt-3 pe-5">
                                     <img src="style/images/disconnected.png" id="imgCondition-day" alt="icon-condition">
                                     <p id="conditions-day" class="text-wrap">Conditions</p>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
+                            <div class="sunTime row d-flex justify-content-center">
                                 <div class="col-lg-3 col-md-2">
                                     <img src="style/images/sunrise.png" class="d-block mx-auto" alt="sunrise" style="width: 80px; height: 80px">
                                     <h5  class="text-center pt-2">Sunrise</h5>
@@ -133,7 +133,7 @@
                             <div class="hours-temp-con row gx-1 pt-3 justify-content-center d-flex">
                                 <div class="col-lg-5 text-center ps-5">
                                     <span id="time">--:--</span><br>
-                                    <span id="temp-hours">0&#8451;</span>
+                                    <span id="temp-hours">0°C</span>
                                 </div>
                                 <div class="condition col-lg-4 text-center pt-4 pe-5">
                                     <img src="style/images/disconnected.png" id="imgCondition-hours" alt="icon-condition">
@@ -171,7 +171,7 @@
                         <div id="content-graph" class="position-relative p-3 container">
                             <div id="disp-graph" class="overflow-auto d-none" style="cursor: pointer;">
                                 <div class="d-flex align-items-center collapse-temp" data-bs-toggle="collapse" data-bs-target="#graph-temp">
-                                    <div class="me-auto p-2">Temp (℃)</div>
+                                    <div class="me-auto p-2">Temp (°C)</div>
                                     <span class="material-symbols-outlined expand-more" id="expand-more-temp">
                                         expand_more
                                     </span>
