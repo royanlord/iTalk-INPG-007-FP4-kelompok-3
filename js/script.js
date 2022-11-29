@@ -408,7 +408,13 @@ btnSubmit.addEventListener('click', function(e) {
                     getDate.value = null;
 
                     const fetchedDataForGraph = response.forecast.forecastday[0].hour
-                    new Chart(ctx1, {
+                    if ((window.tempChart && window.humChart && window.windChart && window.pressChart) != null) {
+                        window.tempChart.destroy();
+                        window.humChart.destroy();
+                        window.windChart.destroy();
+                        window.pressChart.destroy();
+                    }
+                    window.tempChart = new Chart(ctx1, {
                         type: 'line',
                         data: {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
@@ -428,7 +434,7 @@ btnSubmit.addEventListener('click', function(e) {
                             }
                         }
                     });
-                    new Chart(ctx2, {
+                    window.humChart = new Chart(ctx2, {
                         type: 'line',
                         data: {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
@@ -448,7 +454,7 @@ btnSubmit.addEventListener('click', function(e) {
                             }
                         }
                     });
-                    new Chart(ctx3, {
+                    window.windChart = new Chart(ctx3, {
                         type: 'line',
                         data: {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
@@ -468,7 +474,7 @@ btnSubmit.addEventListener('click', function(e) {
                             }
                         }
                     });
-                    new Chart(ctx4, {
+                    window.pressChart = new Chart(ctx4, {
                         type: 'line',
                         data: {
                             labels: fetchedDataForGraph.map(e => formatAMPM(e.time)),
