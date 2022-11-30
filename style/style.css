@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +20,6 @@ body {
   'opsz' 48
 }
 
-/* sisi kiri */
 .left {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('images/world.jpg');
   background-size: cover;
@@ -34,18 +34,15 @@ body {
   width: 50%;
 }
 
-/* sisi kanan */
 .right {
   border-top-right-radius: 2.2rem;
   border-bottom-right-radius: 2.2rem;
 }
 
 .tab-content {
-  /* opacity: 50%; */
   border-bottom-right-radius: 2.2rem;
 }
 
-/* tombol search */
 #btnSubmit {
   width: 140px;
   height: 45px;
@@ -55,15 +52,12 @@ body {
   display: grid;
   place-content: center;
   transition: 0.2s;
-  /* border: 2px solid rgb(0, 60, 255); */
 }
 
 #btnSubmit:hover {
   background-color: rgb(0, 60, 255);
   color: white;
   filter: brightness(95%);
-  /* background-color: rgb(0, 60, 255);
-  color: white; */
 }
 
 #btnSubmit:active {
@@ -72,7 +66,6 @@ body {
   filter: brightness(85%);
 }
 
-/* load */
 #loader {
   pointer-events: none;
   width: 30px;
@@ -147,7 +140,9 @@ body {
   font-weight: 500;
 }
 
-
+.hours-data h5 {
+  font-size: 19px;
+}
 
 @media (max-width: 576px) {
   .hours-data .col-md-3 {

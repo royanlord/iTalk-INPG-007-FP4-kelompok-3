@@ -86,9 +86,9 @@ function formatAMPM(date) {
     date = new Date(date)
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
+    var ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12;
     minutes = minutes < 10 ? '0'+minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
@@ -134,13 +134,11 @@ btnSubmit.addEventListener('click', function(e) {
             fetch(`https://weatherapi-com.p.rapidapi.com/history.json?q=${setCity}&dt=${setDate}&lang=en`, options)
                 .then(response => response.json())
                 .then((response) => {
-                    console.log(response);
                     document.getElementById('city').innerHTML = response.location.name+', '+response.location.country;
                     var dates = new Date(response.forecast.forecastday[0].date);
                     var times = new Date()
+
                     var jam = times.getHours()
-                    // var menit = times.getMinutes()
-                    // var detik = times.getSeconds()
                     var hari = dates.getDay()
                     var bulan = dates.getMonth()
                     var tahun = dates.getFullYear()
@@ -151,7 +149,6 @@ btnSubmit.addEventListener('click', function(e) {
         
                     document.getElementById('dates').innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun
         
-                    // day section
                     document.getElementById('detailCity').innerHTML = response.location.name;
                     document.getElementById('temp-day').innerHTML = response.forecast.forecastday[0].day.avgtemp_c + "°C";
                     document.getElementById('conditions-day').innerHTML = response.forecast.forecastday[0].day.condition.text;
@@ -160,11 +157,9 @@ btnSubmit.addEventListener('click', function(e) {
                     document.getElementById('sunrise').innerHTML = response.forecast.forecastday[0].astro.sunrise;
                     document.getElementById('sunset').innerHTML = response.forecast.forecastday[0].astro.sunset;
 
-                    // graphs
                     document.getElementById('graphCity').innerHTML = response.location.name+' Weather Chart';
                     document.getElementById('graphCity').classList.remove('text-muted')
         
-                    // hours section
                     if (jam >= 0 && jam < 1) {
                         document.getElementById('temp-hours').innerHTML = response.forecast.forecastday[0].hour[0].temp_c + "°C";
                         document.getElementById('conditions-hours').innerHTML = response.forecast.forecastday[0].hour[0].condition.text;
@@ -383,27 +378,19 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('chanceRain').innerHTML = response.forecast.forecastday[0].hour[23].chance_of_rain + " %";
                     }
                     
-                    // time
                     window.setInterval(hours, 500)
                     function hours() {
                         var tms = new Date()
                         var hr = tms.getHours()
                         var mn = tms.getMinutes()
-                        // var sc = tms.getSeconds()
+
                         var ampm = jam >= 12 ? 'PM' : 'AM';
                         hr = hr % 12;
                         hr = hr ? hr : 12;
                         mn = mn < 10 ? '0'+mn : mn;
                         document.getElementById('time').innerHTML = hr+":"+mn+' '+ampm;
-        
                     }
-                    // document.getElementById('time').innerHTML = jam+":"+menit+' '+ampm;
-                    // document.getElementById('time').innerHTML = hours(times)
-        
-                    // document.getElementById('conditions').innerHTML = response.forecast.forecastday[0].day.condition.text;
-                    // iconCond = response.forecast.forecastday[0].day.condition.icon;
-                    // document.getElementById('imgCondition').setAttribute("src", `https://${iconCond}`)
-                    // document.getElementById('windSpeed').innerHTML = response.forecast.forecastday[0].day.maxwind_kph + " kph";
+                    
                     this.innerHTML = "Search"
                     document.body.style.cursor = "default";
                     document.getElementById('btnSubmit').disabled = false;
@@ -432,9 +419,9 @@ btnSubmit.addEventListener('click', function(e) {
                         },
                         options: {
                             scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
                     });
@@ -452,9 +439,9 @@ btnSubmit.addEventListener('click', function(e) {
                         },
                         options: {
                             scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
                     });
@@ -472,9 +459,9 @@ btnSubmit.addEventListener('click', function(e) {
                         },
                         options: {
                             scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
                     });
@@ -492,15 +479,14 @@ btnSubmit.addEventListener('click', function(e) {
                         },
                         options: {
                             scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
                         }
                     });
                     dispGraph.classList.remove('d-none');
 
-                    // hide notfound
                     var contentDay = document.getElementById('content-day');
                     var contentHours = document.getElementById('content-hours');
                     var notFoundDay = document.getElementById('not-found-day');
@@ -521,7 +507,6 @@ btnSubmit.addEventListener('click', function(e) {
                             icon: 'error',
                             title: 'Oops...',
                             text: "Location doesn't exist!"
-                            // footer: "Please input valid country"
                         });
                         this.innerHTML = "Search"
                         document.body.style.cursor = "default";
@@ -533,7 +518,6 @@ btnSubmit.addEventListener('click', function(e) {
                         document.getElementById('city').innerHTML = "<span id='city' class='text-muted' style='font-size: 20px'>Please input a valid location!</span>"
                         document.getElementById('dates').innerHTML = "-"
 
-                        // show notfound
                         var contentDay = document.getElementById('content-day');
                         var contentHours = document.getElementById('content-hours');
                         var notFoundDay = document.getElementById('not-found-day');
@@ -548,9 +532,7 @@ btnSubmit.addEventListener('click', function(e) {
                         contentGraph.classList.add("d-none")
                         notFoundGraph.classList.remove("d-none")
                     }
-                    console.error(err)
                 });
         },1000);
     }
-    
 })
